@@ -1,9 +1,15 @@
-# About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+# 关于
 
-::github{repo="saicaca/fuwari"}
+## 我
 
-> ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+我是Cxr1，一个普通的编程爱好者，平时用Python，C/C++，Kotlin。正在学习JS/TS。
+
+## 我的工作室
+
+Anew-Studio，一个小工作室，有5/6个人
+
+- MC乄Withers
+- RukaaX（[blogs.rukaax.top](https://blogs.rukaax.top)）
+- Ma0de（已不知去向）
+- 叙世
+- Cxr1
