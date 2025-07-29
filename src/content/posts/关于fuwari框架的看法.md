@@ -50,38 +50,49 @@ pnpm dev # 本地服务+生成静态文件
 部署真的让我头疼（因为我用的Github Pages），在这里贴上我Deploy Github Action脚本：
 
 ```yml
-name: Deploy Astro Site to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
+  # 每次推送到 `main` 分支时触发这个“工作流程”
+  # 如果你使用了别的分支名，请按需将 `main` 替换成你的分支名
   push:
     branches: [ main ]
+  # 允许你在 GitHub 上的 Actions 标签中手动触发此“工作流程”
+  workflow_dispatch:
+
+# 允许 job 克隆 repo 并创建一个 page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout your repository using git
         uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - name: Install, build, and upload your site
+        uses: withastro/action@v2
         with:
-          node-version: 18
+          # path: . # 存储库中 Astro 项目的根位置。（可选）
+          # node-version: 20 # 用于构建站点的特定 Node.js 版本，默认为 20。（可选）
+          package-manager: pnpm@latest # 应使用哪个 Node.js 包管理器来安装依赖项和构建站点。会根据存储库中的 lockfile 自动检测。
 
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build
-        run: pnpm run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
 ```
+
+PS：在.github/workflows下创建deploy.yml，输入以上内容，推送到Github仓库，执行Actions。
 
 评价：评价：⭐⭐（满5⭐）
 
