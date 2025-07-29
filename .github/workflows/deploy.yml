@@ -15,14 +15,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'pnpm'  # 关键：这会触发 pnpm 的自动安装 + 依赖缓存
+          # 启用缓存（可选，但需要 pnpm-lock.yaml 存在）
+          cache: 'pnpm'
           cache-dependency-path: pnpm-lock.yaml
 
-      # ✅ 显式检查 pnpm 是否存在（调试用，可选）
-      - name: Check pnpm
+      # ✅ 关键：确保 pnpm 被安装
+      - name: Install pnpm
         run: |
-          which pnpm
-          pnpm --version || echo "pnpm not found!"
+          if ! command -v pnpm; then
+            echo "pnpm not found, installing..."
+            npm install -g pnpm
+          fi
+          echo "pnpm version: $(pnpm --version)"
 
       - name: Install dependencies
         run: pnpm install
