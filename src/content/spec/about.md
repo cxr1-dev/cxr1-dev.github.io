@@ -9,7 +9,7 @@
 Anew-Studio，一个小工作室，有5/6个人
 
 - MC乄Withers
-- RukaaX（[blogs.rukaax.top](https://blogs.rukaax.top)）
+- RukaaX（[博客](https://blogs.rukaax.top)）
 - Ma0de（已不知去向）
 - 叙世
 - Cxr1

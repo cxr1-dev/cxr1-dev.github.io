@@ -47,9 +47,9 @@ pnpm dev # 本地服务+生成静态文件
 
 # 三、部署
 
-部署真的让我头疼（因为我用的Github Pages），在这里贴上我Deploy Github Action脚本：
+部署真的让我头疼（因为我用的`Github Pages`），在这里贴上我`Github Action`脚本：
 
-```yml
+```yaml
 name: Deploy to GitHub Pages
 
 on:
@@ -92,7 +92,7 @@ jobs:
 
 ```
 
-PS：在.github/workflows下创建deploy.yml，输入以上内容，推送到Github仓库，执行Actions。
+PS：在`.github/workflows`下创建`deploy.yml`，输入以上内容，推送到`Github`仓库，执行`Actions`。
 
 评价：评价：⭐⭐（满5⭐）
 
