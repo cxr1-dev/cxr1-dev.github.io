@@ -92,7 +92,7 @@ jobs:
 
 ```
 
-PS：在`.github/workflows`下创建`deploy.yml`，输入以上内容，推送到`Github`仓库，执行`Actions`。
+> PS：在`.github/workflows`下创建`deploy.yml`，输入以上内容，推送到`Github`仓库，执行`Actions`。
 
 评价：评价：⭐⭐（满5⭐）
 
