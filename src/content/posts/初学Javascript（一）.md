@@ -3,7 +3,7 @@ title: 初学Javascript（一）
 published: 2025-07-30
 description: '主播要开始学习Javascript了！'
 image: 'https://youke1.picui.cn/s1/2025/07/30/6889bc844cd23.png'
-tags: [JS， Web]
+tags: [JS, Web]
 category: '初学JS'
 draft: false 
 lang: ''
@@ -29,7 +29,7 @@ lang: ''
 </head>
 <body>
     <script>
-      
+    
     </script>
 </body>
 </html>
