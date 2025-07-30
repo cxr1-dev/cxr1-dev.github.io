@@ -2,9 +2,9 @@
 title: 关于fuwari框架的看法
 published: 2025-07-29
 description: '主播今天刚刚换上fuwari，有一些看法'
-image: ''
+image: 'https://youke1.picui.cn/s1/2025/07/30/68896cd60d2dd.png'
 tags: [Fuwari, Blog]
-category: ''
+category: 'Blog'
 draft: false 
 lang: ''
 ---
