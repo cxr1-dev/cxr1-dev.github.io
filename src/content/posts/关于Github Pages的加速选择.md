@@ -22,7 +22,7 @@ Cloudflare（以下简称cf），是一家~~做慈善~~为用户提供免费网�
 
 # 二、Vercel
 
-Vercel是一家海外的提供类似于`Cloudflare Pages`的静态/框架网站部署服务。
+Vercel是一家海外的提供类似于`Cloudflare Pages`的静态/框架网站部署服务的公司。
 
 目前我认为Vercel的体验是最好的，优点如下：
 
@@ -34,7 +34,7 @@ Vercel是一家海外的提供类似于`Cloudflare Pages`的静态/框架网站�
 
 # EdgeOne
 
-EdgeOne的国际版还算不错，但是不优选速度比较低，~~但是没有cf慢~~，优选也比较麻烦。
+EdgeOne的国际版还算不错，但是不优选速度比较低，~~但是没有cf慢~~，优选也比较麻烦（不麻烦，但是主播的优选速度也很慢）。
 
 如果Vercel被Blocked的话，可以作为备选。
 
