@@ -1,3 +1,6 @@
+import { languageConfig } from "./config/language";
+import I18nKey from "./i18n/i18nKey";
+import { i18n } from "./i18n/translation";
 import type {
 	ExpressiveCodeConfig,
 	LicenseConfig,
@@ -10,7 +13,7 @@ import { LinkPreset } from "./types/config";
 export const siteConfig: SiteConfig = {
 	title: "CXR1",
 	subtitle: "TECH BLOG",
-	lang: "zh_CN", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th', 'vi'
+	lang: languageConfig.defaultLang,
 	themeColor: {
 		hue: 260, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
 		fixed: false, // Hide the theme color picker for visitors
@@ -44,6 +47,14 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Home,
 		LinkPreset.Archive,
 		LinkPreset.About,
+		{
+			name: i18n(I18nKey.friends),
+			url: "/friends/",
+		},
+		{
+			name: i18n(I18nKey.sponsor),
+			url: "/sponsor/",
+		},
 		{
 			name: "GitHub",
 			url: "https://github.com/cxr1-dev", // Internal links should not include the base path, as it is automatically added

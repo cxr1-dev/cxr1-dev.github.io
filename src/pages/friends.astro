@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+import FriendCard from "../components/FriendCard.astro";
+import { friends } from "../constants/friends";
+---
+
+<Layout title="友情链接">
+  <MainGridLayout>
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <div class="flex flex-col gap-12">
+        <header>
+          <h1 class="text-3xl font-bold text-gray-900 dark:text-white">友情链接</h1>
+          <p class="mt-4 text-gray-600 dark:text-gray-400">「所谓朋友，是值得为之花费时间的人」</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {friends.map((friend) => <FriendCard friend={friend} />)}
+        </div>
+
+        <section class="rounded-2xl bg-gray-50/50 dark:bg-gray-800/50 p-6">
+          <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">申请友链</h2>
+          
+          <div class="flex flex-col gap-6">
+            <div class="prose dark:prose-invert max-w-none">
+              <p>欢迎和我交换友链！如果您想要申请，请确保您的网站满足以下条件：</p>
+              <ul>
+                <li>网站内容积极向上，无恶意软件和内容农场</li>
+                <li>站点可以稳定访问，有一定的更新频率</li>
+                <li>有独立域名并启用 HTTPS</li>
+              </ul>
+            </div>
+
+            <div class="rounded-xl bg-gray-100 dark:bg-gray-800 p-6">
+              <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">申请格式</h3>
+              <div class="font-mono text-sm text-gray-600 dark:text-gray-400 bg-white/50 dark:bg-black/20 rounded-lg p-4">
+                名称：您的网站名称
+                链接：您的网站地址
+                头像：您的头像（可投递图床地址，也可作为邮件附件发送）
+                描述：一句话介绍您的网站（25字以内）
+              </div>
+            </div>
+
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+              您可以通过评论区、电子邮件或其他社交媒体联系我来申请友链。
+              我会在24小时内（并非24小时内 ）回复并添加您的友链。
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </MainGridLayout>
+</Layout>
+
+<style>
+/* For better markdown content display */
+.prose {
+  @apply text-gray-600 dark:text-gray-400;
+}
+.prose ul {
+  @apply space-y-1 marker:text-gray-400 dark:marker:text-gray-500;
+}
+.prose ul > li {
+  @apply pl-1;
+}
+</style>
+</style>
