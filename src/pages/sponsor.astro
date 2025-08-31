@@ -1,50 +1,49 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
+import { Image } from 'astro:assets';
+import alipayQR from '@assets/images/AliPay.jpg';
 ---
 
 <Layout title="赞助支持">
   <MainGridLayout>
-    <div class="sponsor-container">
-      <h1 class="page-title">赞助支持</h1>
-      <div class="sponsor-content">
-        <p class="intro-text">
-          如果您觉得我的博客内容对您有帮助，可以考虑给我一些支持。您的每一份支持都将帮助我创作出更多优质的内容！
-        </p>
+    <div class="max-w-4xl mx-auto px-4 py-8">
+      <div class="flex flex-col gap-8 items-center">
+        <header class="text-center">
+          <h1 class="text-3xl font-bold text-gray-900 dark:text-white">赞助支持</h1>
+          <p class="mt-4 text-gray-600 dark:text-gray-400">
+            给孩子点钱吧！！！
+          </p>
+        </header>
         
-        <div class="sponsor-methods">
-          <div class="sponsor-method">
-            <h2>微信支付</h2>
-            <div class="qr-placeholder">
-              <!-- 替换为您的微信收款码 -->
-              <div class="placeholder-text">微信收款码</div>
-            </div>
-          </div>
-          
-          <div class="sponsor-method">
-            <h2>支付宝</h2>
-            <div class="qr-placeholder">
-              <!-- 替换为您的支付宝收款码 -->
-              <div class="placeholder-text">支付宝收款码</div>
-            </div>
+        <div class="sponsor-method">
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4 text-center">支付宝扫码赞助</h2>
+          <div class="bg-white p-4 rounded-xl shadow-md inline-block">
+            <Image 
+              src={alipayQR} 
+              alt="支付宝收款码" 
+              width={256}
+              height={256}
+              class="object-contain"
+            />
           </div>
         </div>
 
-        <div class="sponsor-notes">
-          <h2>赞助须知</h2>
-          <ul>
+        <div class="sponsor-notes rounded-xl bg-gray-50 dark:bg-gray-800/50 p-6 w-full max-w-2xl">
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">赞助须知</h2>
+          <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400">
             <li>赞助完全自愿，金额不限</li>
-            <li>赞助者可以在留言中告知您的网名，我会在感谢列表中展示</li>
+            <li>赞助后可以在评论区留下您的网名，我会在感谢列表中展示</li>
             <li>赞助资金将用于服务器维护和内容创作</li>
           </ul>
         </div>
 
-        <div class="sponsors-wall">
-          <h2>赞助者名单</h2>
-          <p class="text-center text-gray-600 dark:text-gray-400">
+        <div class="sponsors-wall w-full max-w-2xl">
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-4 text-center">赞助者名单</h2>
+          <p class="text-center text-gray-600 dark:text-gray-400 mb-4">
             感谢以下朋友的支持（按时间先后排序）
           </p>
-          <div class="sponsors-list">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             <!-- 在这里添加赞助者列表 -->
           </div>
         </div>
