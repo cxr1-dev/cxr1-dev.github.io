@@ -10,7 +10,7 @@ lang: ''
 ---
 # 纯主观！让你感到难受请立刻退出！
 
-# 一、Cloudflare
+# Cloudflare
 
 Cloudflare（以下简称cf），是一家~~做慈善~~为用户提供免费网络服务的公司，其中包括`Wokers`、`Pages`、`CDN`、`Zero Turst`等，今天我们要聊的就是cf的CDN服务。
 
@@ -20,7 +20,7 @@ Cloudflare（以下简称cf），是一家~~做慈善~~为用户提供免费网�
 
 最终评分：评价：⭐⭐（满5⭐）
 
-# 二、Vercel
+# Vercel
 
 Vercel是一家海外的提供类似于`Cloudflare Pages`的静态/框架网站部署服务的公司。
 
