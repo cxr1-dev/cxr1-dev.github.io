@@ -56,7 +56,7 @@ export const navBarConfig: NavBarConfig = {
 			url: "/sponsor/",
 		},
 		{
-			name: "本网站使用的网站",
+			name: "服务商",
 			url: "https://somesite.324181.xyz", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
 		},
