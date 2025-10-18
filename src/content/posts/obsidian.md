@@ -2,7 +2,7 @@
 title: Obsidian(黑曜石)使用体验
 published: 2025-10-18
 description: 看到了一个md editor，来试一试
-image: ""
+image: https://9wtpsrgvx55xuqus.public.blob.vercel-storage.com/PixPin_2025-10-18_19-14-51-DIBHTCvPvJeBrpQ4gcxbBOkzAs14EC.png
 tags:
   - Obsidian
   - Blog

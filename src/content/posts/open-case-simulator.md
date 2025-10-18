@@ -1,12 +1,13 @@
 ---
 title: 开箱模拟器
 published: 2025-09-20
-description: '写了个纯js的小项目，写个博客'
-image: ''
-tags: [JS]
-category: '一些项目'
-draft: false 
-lang: ''
+description: 写了个纯js的小项目，写个博客
+image: https://9wtpsrgvx55xuqus.public.blob.vercel-storage.com/PixPin_2025-10-18_19-13-45-Z1jLsPbt6sTZdGtQHOQxKNGTGWnQ3T.png
+tags:
+  - JS
+category: 一些项目
+draft: false
+lang: ""
 ---
 
 今天写了个练js的小项目：

@@ -1,12 +1,14 @@
 ---
 title: Cloud Mail折腾记
 published: 2025-08-31
-description: '今天逛b站发现了一个开源项目，折腾一下'
-image: ''
-tags: [Mail, Cloudflare]
-category: ''
-draft: false 
-lang: ''
+description: 今天逛b站发现了一个开源项目，折腾一下
+image: https://9wtpsrgvx55xuqus.public.blob.vercel-storage.com/PixPin_2025-10-18_19-17-06-E3JIN0T5JAgarhCGli4nl7YoRITrFZ.png
+tags:
+  - Mail
+  - Cloudflare
+category: ""
+draft: false
+lang: ""
 ---
 首先我先把Github仓库放这里方便大家取用。
 ::github{repo="eoao/cloud-mail"}

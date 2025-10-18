@@ -1,12 +1,14 @@
 ---
 title: 关于fuwari框架的看法
 published: 2025-07-29
-description: '主播今天刚刚换上fuwari，有一些看法'
-image: ''
-tags: [Fuwari, Blog]
-category: 'Blog'
-draft: false 
-lang: ''
+description: 主播今天刚刚换上fuwari，有一些看法
+image: https://9wtpsrgvx55xuqus.public.blob.vercel-storage.com/PixPin_2025-10-18_19-08-33-w8juslofnxX6Fa1ETvrvVGfUTuM9rP.png
+tags:
+  - Fuwari
+  - Blog
+category: Blog
+draft: false
+lang: ""
 ---
 # 纯主观！让你感到不适请立刻退出！
 
