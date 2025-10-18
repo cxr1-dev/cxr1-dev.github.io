@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "posts/cloud-mail.md",
+                "file": "posts/image-hosting-site.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "cloud-mail"
+              "title": "image-hosting-site"
             }
           }
         ]
@@ -171,11 +171,17 @@
   },
   "active": "86e180aa4d298627",
   "lastOpenFiles": [
-    "posts/learn-js.md",
+    "posts/obsidian.md",
+    "posts/image-hosting-site.md",
+    "assets/images/image-hosting-site-3.png",
+    "assets/images/Pasted image 20251018205414.png",
+    "assets/images/image-hosting-site-2.png",
+    "assets/images/image-hosting-site-1.png",
+    "assets/images/image-hosting-site.png",
     "posts/cloud-mail.md",
+    "posts/learn-js.md",
     "posts/about-make-github-pages-fast.md",
     "posts/about-fuwari.md",
-    "posts/obsidian.md",
     "posts/open-case-simulator.md",
     "未命名 1.canvas",
     "未命名.canvas",
@@ -184,8 +190,6 @@
     "assets/images/obsidian.png",
     "assets/images/obsidian-3.png",
     "assets/images/obsidian-2.png",
-    "assets/images/obsidian.png",
-    "assets/images/obsidian-1.png",
     "posts/hello.md",
     "assets/images",
     "assets",
