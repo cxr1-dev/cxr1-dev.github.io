@@ -19,3 +19,20 @@ lang: ''
 - ……
 
 就先写到这里了，byebye~!
+
+<script src="https://giscus.app/client.js"
+        data-repo="cxr1-dev/giscus-fuwari"
+        data-repo-id="R_kgDOPYpcxQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPYpcxc4CtzPu"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
