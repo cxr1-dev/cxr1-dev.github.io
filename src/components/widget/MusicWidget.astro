@@ -1,0 +1,31 @@
+---
+import MusicPlayer from "../MusicPlayer.astro";
+import cryTrack from "../../assets/audio/CRY.mp3";
+import cover from '../../assets/images/cover.webp';
+
+// Vite may return a string URL or an object with .src
+function resolveUrl(v: unknown) {
+  // @ts-ignore - allow both shapes
+  return (v && typeof v === 'object' && ('src' in v)) ? (v as any).src : (v as any);
+}
+
+const audioUrl = resolveUrl(cryTrack);
+const coverUrl = resolveUrl(cover);
+---
+
+<aside class="music-widget">
+  <details open class="rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-800/40" role="group">
+    <summary class="flex items-center gap-2 p-2 cursor-pointer text-sm text-gray-700 dark:text-gray-300">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-primary-500" viewBox="0 0 24 24" fill="currentColor"><path d="M9 17V7l10-2v10"/></svg>
+      播放器
+    </summary>
+    <div class="p-2">
+      <MusicPlayer tracks={[{ title: '春日影', artist: 'Crychic', src: audioUrl, cover: coverUrl }]} />
+    </div>
+  </details>
+</aside>
+
+<style>
+.music-widget details > summary { list-style: none; }
+.music-widget summary::-webkit-details-marker { display:none; }
+</style>

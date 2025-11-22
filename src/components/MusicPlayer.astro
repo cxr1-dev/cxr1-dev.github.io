@@ -1,0 +1,173 @@
+---
+// 简单的音乐播放器组件
+// 用法：<MusicPlayer tracks={[{title:'...', artist:'...', src:'...'}]} />
+const { tracks = [] } = Astro.props;
+
+// 如果没有传入 tracks，使用一个示例远程音频以便演示（可删除）
+const demoTracks = [
+  {
+    title: 'N/A',
+    artist: 'N/A',
+    src: '',
+    cover: '',
+  },
+];
+
+const playlist = tracks.length ? tracks : demoTracks;
+---
+
+<div class="music-player w-full max-w-md bg-white/80 dark:bg-gray-800/60 rounded-xl p-4 shadow-md">
+  <div class="flex items-center gap-4">
+    <div class="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-md overflow-hidden flex-shrink-0">
+      <img src={playlist[0].cover || '/assets/images/demo-avatar.png'} alt="cover" class="w-full h-full object-cover" />
+    </div>
+    <div class="flex-1 min-w-0">
+      <div class="text-sm font-semibold text-gray-900 dark:text-white truncate" id="mp-title">{playlist[0].title}</div>
+      <div class="text-xs text-gray-500 dark:text-gray-400 truncate mt-1" id="mp-artist">{playlist[0].artist}</div>
+    </div>
+    <div class="flex items-center gap-2">
+      <button id="mp-prev" class="p-2 rounded-md bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
+        ‹
+      </button>
+      <button id="mp-toggle" class="p-2 rounded-md bg-primary-500 text-white hover:brightness-90">
+        ▶
+      </button>
+      <button id="mp-next" class="p-2 rounded-md bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
+        ›
+      </button>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <div class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+      <div id="mp-progress" class="h-2 bg-primary-500 w-0"></div>
+    </div>
+    <div class="flex justify-between text-xs text-gray-500 mt-1">
+      <span id="mp-time">0:00</span>
+      <span id="mp-duration">0:00</span>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <details class="text-sm text-gray-700 dark:text-gray-300">
+      <summary class="cursor-pointer">播放列表 ({playlist.length})</summary>
+      <ul id="mp-list" class="mt-2 space-y-2 max-h-40 overflow-auto">
+        {playlist.map((t, i) => (
+          <li class="flex items-center justify-between p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700" data-index={i}>
+            <div class="min-w-0">
+              <div class="text-sm font-medium truncate">{t.title}</div>
+              <div class="text-xs text-gray-500 truncate">{t.artist}</div>
+            </div>
+            <div class="ml-3 text-xs text-gray-400">{i === 0 ? '当前' : ''}</div>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </div>
+
+  <audio id="mp-audio" preload="metadata">
+    {playlist.map(t => (<source src={t.src} />))}
+    您的浏览器不支持 audio 元素。
+  </audio>
+</div>
+
+<script type="module" client:load>
+// 简单的播放器逻辑（client:load）
+const player = (() => {
+  const audio = document.getElementById('mp-audio');
+  const btn = document.getElementById('mp-toggle');
+  const prevBtn = document.getElementById('mp-prev');
+  const nextBtn = document.getElementById('mp-next');
+  const progress = document.getElementById('mp-progress');
+  const timeEl = document.getElementById('mp-time');
+  const durEl = document.getElementById('mp-duration');
+  const titleEl = document.getElementById('mp-title');
+  const artistEl = document.getElementById('mp-artist');
+  const listEl = document.getElementById('mp-list');
+
+  const tracks = Array.from(listEl.querySelectorAll('li')).map(li => ({
+    index: Number(li.dataset.index),
+    title: li.querySelector('.text-sm')?.textContent || '',
+    artist: li.querySelector('.text-xs')?.textContent || '',
+  }));
+
+  let current = 0;
+  let playing = false;
+
+  function loadIndex(i) {
+    current = i;
+    audio.currentTime = 0;
+    if (audio.children[i]) {
+      // 设置 source 元素
+      const src = audio.children[i].getAttribute('src');
+      audio.src = src;
+    }
+    const t = tracks[i];
+    if (t) {
+      titleEl.textContent = t.title;
+      artistEl.textContent = t.artist;
+    }
+    updateListActive();
+  }
+
+  function play() {
+    audio.play();
+    playing = true;
+    btn.textContent = '⏸️';
+  }
+  function pause() {
+    audio.pause();
+    playing = false;
+    btn.textContent = '▶️';
+  }
+  btn.addEventListener('click', () => {
+    if (!audio.src) loadIndex(0);
+    playing ? pause() : play();
+  });
+  prevBtn.addEventListener('click', () => {
+    loadIndex((current - 1 + tracks.length) % tracks.length);
+    if (playing) play();
+  });
+  nextBtn.addEventListener('click', () => {
+    loadIndex((current + 1) % tracks.length);
+    if (playing) play();
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    const pct = audio.currentTime / (audio.duration || 1);
+    progress.style.width = (pct * 100) + '%';
+    timeEl.textContent = formatTime(audio.currentTime);
+    durEl.textContent = formatTime(audio.duration || 0);
+  });
+
+  audio.addEventListener('ended', () => {
+    nextBtn.click();
+  });
+
+  listEl.addEventListener('click', (e) => {
+    const li = e.target.closest('li');
+    if (!li) return;
+    const idx = Number(li.dataset.index);
+    loadIndex(idx);
+    play();
+  });
+
+  function updateListActive() {
+    listEl.querySelectorAll('li').forEach(li => li.classList.remove('ring-2', 'ring-primary-400'));
+    const active = listEl.querySelector('li[data-index="' + current + '"]');
+    if (active) active.classList.add('ring-2', 'ring-primary-400');
+  }
+
+  function formatTime(sec) {
+    if (!sec || isNaN(sec)) return '0:00';
+    const m = Math.floor(sec / 60);
+    const s = Math.floor(sec % 60).toString().padStart(2, '0');
+    return `${m}:${s}`;
+  }
+
+  // 初始化第一个
+  loadIndex(0);
+
+  return { loadIndex, play, pause };
+})();
+</script>
