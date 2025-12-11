@@ -94,13 +94,15 @@ jobs:
 
 ```
 
-> PS：在`.github/workflows`下创建`deploy.yml`，输入以上内容，推送到`Github`仓库，执行`Actions`。
+
+> 这脚本废了，我也不打算修
+
 
 评价：评价：⭐⭐（满5⭐）
 
 # 四、外观
 
-外观真的很好看，整体有很多Google Material You的设计和色彩风格，大圆角很好看，我很喜欢。
+外观真的很好看，整体有很多类似Google Material You的设计和色彩风格，大圆角很好看，我很喜欢。
 
 评价：⭐⭐⭐⭐⭐（满5⭐）
 
