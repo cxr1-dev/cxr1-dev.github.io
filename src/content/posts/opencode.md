@@ -33,7 +33,7 @@ npm i -g opencode-ai
 ```
 好了，**安装完了！**
 # 3.运行并测试
-在终端输入```
+在终端输入
 ```bash
 opencode
 ```
