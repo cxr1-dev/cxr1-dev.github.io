@@ -66,7 +66,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/cxr1.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "Cxr1",
-	bio: "Keep U ❤ & Stay Alive.",
+	bio: "我喜欢你，不是因为性别，而是因为你是你。",
 	links: [
 		{
 			name: "Bilibili",
@@ -80,6 +80,12 @@ export const profileConfig: ProfileConfig = {
 			icon: "fa6-brands:github",
 			url: "https://github.com/cxr1-dev",
 		},
+		{
+			name: "Website",
+			icon: "fa6-solid:link",
+			url: "https://cxr1.top",
+		},
+
 	],
 };
 
