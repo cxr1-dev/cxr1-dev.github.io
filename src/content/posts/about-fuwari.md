@@ -12,11 +12,9 @@ lang: ""
 ---
 # 纯主观！让你感到不适请立刻退出！
 
-开始前我先把Github仓库放在这里，还有我自己的配置。
+开始前我先把Github仓库放在这里。
 
 ::github{repo="saicaca/fuwari"}
-
-::github{repo="cxr1-dev/cxr1-dev.github.io"}
 
 # 一、配置Fuwari
 
